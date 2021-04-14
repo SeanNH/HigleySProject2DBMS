@@ -186,22 +186,20 @@ inner join Contact on Contact.ContactID = Shipment.ContactID
 Inner join Company on Company.CompanyID = Contact.CompanyID
 order by EstMiles DESC"></asp:SqlDataSource>
         <h2 class="auto-style1">Most Frequented Pickup Location</h2>
-        <asp:DataList ID="DataList1" runat="server" CellPadding="4" DataSourceID="FrequentLocation" ForeColor="#333333">
-            <AlternatingItemStyle BackColor="White" />
+        <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" CellPadding="4" DataSourceID="FrequentLocation" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
+            <AlternatingRowStyle BackColor="White" />
+            <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
+            <EditRowStyle BackColor="#2461BF" />
+            <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
+            <Fields>
+                <asp:BoundField DataField="numTrips" HeaderText="Trips Completed" ReadOnly="True" SortExpression="numTrips" />
+                <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+            </Fields>
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <ItemStyle BackColor="#EFF3FB" />
-            <ItemTemplate>
-                numTrips:
-                <asp:Label ID="numTripsLabel" runat="server" Text='<%# Eval("numTrips") %>' />
-                <br />
-                Address:
-                <asp:Label ID="AddressLabel" runat="server" Text='<%# Eval("Address") %>' />
-                <br />
-<br />
-            </ItemTemplate>
-            <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        </asp:DataList>
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+        </asp:DetailsView>
         <asp:SqlDataSource ID="FrequentLocation" runat="server" ConnectionString="<%$ ConnectionStrings:student12ConnectionString %>" SelectCommand="select top 1 count(Shipment.ShipmentID) as numTrips, Company.Address
 from Shipment
 inner join Contact on Contact.ContactID = Shipment.ContactID
