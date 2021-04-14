@@ -330,9 +330,38 @@ order by NumJobs desc"></asp:SqlDataSource>
             <asp:SqlDataSource ID="Truck_MaintenanceMiles" runat="server" ConnectionString="<%$ ConnectionStrings:student12ConnectionString %>" SelectCommand="SELECT TruckLog.WorkDone, Truck.VIN, Truck.CurrentMiles FROM TruckLog INNER JOIN Truck ON Truck.VIN = TruckLog.VIN ORDER BY Truck.CurrentMiles DESC"></asp:SqlDataSource>
         </p>
         <p>
-            &nbsp;</p>
+            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="VIN" DataSourceID="Truck_MaintenanceMiles" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
+                <AlternatingRowStyle BackColor="White" />
+                <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
+                <EditRowStyle BackColor="#2461BF" />
+                <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
+                <Fields>
+                    <asp:TemplateField HeaderText="WorkDone" SortExpression="WorkDone">
+                        <EditItemTemplate>
+                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="WorkDoneSelect" DataTextField="WorkDone" DataValueField="WorkDone" SelectedValue='<%# Bind("WorkDone") %>'>
+                            </asp:DropDownList>
+                        </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="WorkDoneSelect" DataTextField="WorkDone" DataValueField="WorkDone" SelectedValue='<%# Bind("WorkDone") %>'>
+                            </asp:DropDownList>
+                        </InsertItemTemplate>
+                        <ItemTemplate>
+                            <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="WorkDoneSelect" DataTextField="WorkDone" DataValueField="WorkDone" SelectedValue='<%# Bind("WorkDone") %>'>
+                            </asp:DropDownList>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="VIN" HeaderText="VIN" ReadOnly="True" SortExpression="VIN" />
+                    <asp:BoundField DataField="CurrentMiles" HeaderText="CurrentMiles" SortExpression="CurrentMiles" />
+                </Fields>
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+            </asp:DetailsView>
+        </p>
         <p>
-            &nbsp;</p>
+            <asp:SqlDataSource ID="WorkDoneSelect" runat="server" ConnectionString="<%$ ConnectionStrings:student12ConnectionString %>" SelectCommand="SELECT [WorkDone] FROM [TruckLog]"></asp:SqlDataSource>
+        </p>
         <p>
             &nbsp;</p>
         <p>
