@@ -18,5 +18,20 @@ namespace HigleySProject2
         {
 
         }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TextBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TextBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

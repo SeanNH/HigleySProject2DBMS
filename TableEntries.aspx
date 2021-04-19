@@ -185,34 +185,266 @@
                     <asp:Button ID="refuel_insert" runat="server" Text="Insert" />
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="refuel_refuelID" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="refuel_date" runat="server" Height="38px"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="refuel_quantity" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="refuel_price" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="refuel_cityID" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="refuel_vendor" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="refuel_comments" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="refuel_truckVIN" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="refuel_driverID" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
+        <p>
+            &nbsp;</p>
+        <table class="auto-style3">
+            <tr>
+                <td>Shipment</td>
+                <td>Shipment ID</td>
+                <td>Contact ID</td>
+                <td>Warehouse ID</td>
+                <td>Truck VIN</td>
+                <td>Deliver By</td>
+                <td>Contents</td>
+                <td>Pickup Date</td>
+                <td>Est. Weight</td>
+                <td>Est. Miles</td>
+                <td>Actual Weight</td>
+                <td>Actual Miles</td>
+                <td>Driver Comments</td>
+                <td>Customer Comments</td>
+                <td>Driver ID</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="shipment_insert" runat="server" Text="Insert" />
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_shipmentID" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_contactID" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_warehouseID" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_truckVIN" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_deliverby" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_contents" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_pickupdate" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_estweight" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_estmiles" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_actweight" runat="server" OnTextChanged="TextBox8_TextChanged"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_actmiles" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_drivercomm" runat="server" OnTextChanged="TextBox6_TextChanged"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_custcomm" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="shipment_driverID" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
+        <p>
+            &nbsp;</p>
+        <table class="auto-style3">
+            <tr>
+                <td>Transaction</td>
+                <td>Transaction ID</td>
+                <td>Shipment ID</td>
+                <td>Base Fee</td>
+                <td>Mileage Fee</td>
+                <td>Express Fee</td>
+                <td>Total Cost</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="transaction_insert" runat="server" Text="Insert" />
+                </td>
+                <td>
+                    <asp:TextBox ID="transaction_transactionID" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="transaction_shipmentID" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="transaction_baseFee" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="transaction_mileagefee" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="transaction_expressfee" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="transaction_totalcost" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
+        <p>
+            &nbsp;</p>
+        <table class="auto-style3">
+            <tr>
+                <td>Truck</td>
+                <td>VIN</td>
+                <td>Make</td>
+                <td>Model</td>
+                <td>Engine</td>
+                <td>Color</td>
+                <td>Size</td>
+                <td>Date Acquired</td>
+                <td>Purchase Price</td>
+                <td>Miles Start</td>
+                <td>Current Miles</td>
+                <td>Year</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="truck_insert" runat="server" Text="Insert" />
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_vin" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_make" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_model" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_engine" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_color" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_size" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_dateacq" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_purchaseprice" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_milesstart" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_currmiles" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="truck_year" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
+        <p>
+            &nbsp;</p>
+        <table class="auto-style3">
+            <tr>
+                <td>Truck Log</td>
+                <td>TruckLogID</td>
+                <td>VIN</td>
+                <td>Work Done</td>
+                <td>Vendor</td>
+                <td>Date</td>
+                <td>Cost</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="trucklog_insert" runat="server" Text="Insert" />
+                </td>
+                <td>
+                    <asp:TextBox ID="trucklog_trucklogID" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="trucklog_vin" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="trucklog_workdone" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="trucklog_vendor" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="trucklog_date" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="trucklog_cost" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
+        <p>
+            &nbsp;</p>
+        <table class="auto-style3">
+            <tr>
+                <td>Warehouse</td>
+                <td>Warehouse ID</td>
+                <td>City ID</td>
+                <td>Address</td>
+                <td>Description</td>
+                <td>Zipcode</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="warehouse_insert" runat="server" Text="Insert" />
+                </td>
+                <td>
+                    <asp:TextBox ID="warehouse_warehouseID" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="warehouse_cityID" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="warehouse_address" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="warehouse_description" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="warehouse_zipcode" runat="server"></asp:TextBox>
                 </td>
             </tr>
         </table>
     </form>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
 </body>
 </html>
